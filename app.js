@@ -7,6 +7,8 @@ const dotenv =require('dotenv')
 
 const app = express();
 
+const scategorieRouter=require("./routes/scategorie.route");
+
 const categorieRouter =require("./routes/categorie.route");
 
 const articleRouter =require("./routes/article.route")
@@ -38,6 +40,7 @@ res.send("bonjour");
 });
 
 app.use('/api/categories', categorieRouter);
+app.use('/api/scategories', scategorieRouter);
 
 app.listen(process.env.PORT, () => {
     console.log(`Server is listening on port ${process.env.PORT}`); 
